@@ -19,17 +19,19 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    async PostUser(user) {
+    async PostUser(user, response) {
         console.log(user);
-        await this.userService.onCreate(user);
+        const result = await this.userService.onCreate(user);
+        response.json({ message: 'successfully', result });
     }
 };
 exports.UserController = UserController;
 __decorate([
     (0, common_1.Post)('addingUser'),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "PostUser", null);
 exports.UserController = UserController = __decorate([
