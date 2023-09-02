@@ -1,0 +1,8 @@
+POST  http://localhost:3000/user/addingUser
+Content-Type: application/json
+
+{
+  "name": "poster",
+  "email": "poster@gmail.com",
+  "age": "62324153"
+}
